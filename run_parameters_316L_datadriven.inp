@@ -1,0 +1,43 @@
+# Material parameters
+rho = 8351.910158  # Density, unit: kg/m3
+cp = 500  # Specific heat capacity, unit: J/(kg K)
+k = 15.0  # Theramal conductivity, unit: W/(m K)
+T_l = 1610.0  # Liquidus temperature (K)
+T_s = 1528.0  # Solidus temperature (K)
+H_l = 209000  # Phase change enthalpy (J/kg)
+T_inf = 300  # Ambient temperature (K)
+h_conv = 10  # Convection heat transfer coefficint (W/(m2K))
+#
+# Domain dimensions and grid characteristics
+length = 4.0e-3  # Length of the domain along x-axis (m)
+width = 1.0e-3  # Width of the domain along y-axis (m)
+height = 1.0e-3  # Height of the domain along z-axis (m)
+line_length = 2.0e-3  # Length of the laser scan
+nx = 201  # Number of grid points in x direction
+ny = 51  # Number of grid points in y direction
+nz = 51  # Number of grid points in z direction
+dt = 1e-6 # Time step in s
+dt_coeff = 0.1000000  # dt = dt_coeff * min(dx, dy, dz) ---> Determinig the time step size
+#
+# Laser parameters
+d_laser = 0.2e-3  # Diameter of the laser (m)
+v_laser = 1.0e-1  # Velocity of the laser (m/s)
+depth_laser = 1e-4  # (=2*height)
+P_laser = 30.0  # Laser power (W) * alpha --> when using volumetric source term (for 0.6 is 90)
+#
+# CUDA Blocks
+bl_x = 10
+bl_y = 10
+bl_z = 1
+#
+# Scaling parameters
+C_L = 1  # Scaling coefficint for length (m)
+C_Wi = 1  # Scaling coefficint for width (m)
+C_H = 1  # Scaling coefficint for height (m)
+C_t = 1  # Scaling coefficint for time (s)
+C_T = 1  # Scaling coefficint for Temperature (K)
+# f_write = 14850  # Frequency of writing the output results in h5 file (in time steps)
+# f_write = 9900  # Frequency of writing the output results in h5 file (in time steps)
+# f_write = 19800  # Frequency of writing the output results in h5 file (in time steps)
+f_write = 1000  # Frequency of writing the output results in h5 file (in time steps)
+f_meltpool = 200 # Frequency of computing the melt pool dimensions (in time steps)
